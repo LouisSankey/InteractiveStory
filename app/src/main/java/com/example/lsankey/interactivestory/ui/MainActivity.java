@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mNameField = (EditText)findViewById(R.id.nameEditText);
-        mStartButton = (Button)findViewById(R.id.button);
+        mStartButton = (Button)findViewById(R.id.choiceButton2);
 
         mStartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,4 +36,9 @@ public class MainActivity extends Activity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mNameField.setText("");
+    }
 }
